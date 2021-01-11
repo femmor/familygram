@@ -17,7 +17,7 @@ const UploadForm = () => {
         }
         else {
             setFile('')
-            setError("please select an image file type (jpg, jpeg or png)")
+            setError("Please select an image file type (jpg, jpeg or png)")
         }
     }
 
@@ -25,7 +25,10 @@ const UploadForm = () => {
         <>
             
             <form>
-                <input type="file" onChange={(e) => uploadHandler(e)}/>
+                <label>
+                    <input type="file" onChange={uploadHandler}/>
+                    <span>+</span>
+                </label>
                 {error ? <Error error={error}/> : 
                     <div>
                         {file.name}
